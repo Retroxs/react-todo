@@ -1,27 +1,21 @@
 import React, { Component } from "react";
 import { Button } from "element-react";
+import { inject, observer } from "mobx-react";
 
+@inject("CommonStore")
+@observer
 class reverseMessage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: "Hello World"
-    };
-  }
   reverse() {
-    this.setState({
-      message: this.state.message
-        .split("")
+        this.props.CommonStore.appName = this.props.CommonStore.appName.split("")
         .reverse()
         .join("")
-    });
   }
   render() {
-    const { message } = this.state;
+    const {CommonStore} = this.props
     return (
       <div>
-        <h1>{message}</h1>
-        <Button onClick={() => this.reverse()}>reverse</Button>
+        <h1>{CommonStore.appName}</h1>
+        <Button onClick={this.reverse.bind(this)}>reverse</Button>
       </div>
     );
   }

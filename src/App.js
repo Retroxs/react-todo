@@ -8,7 +8,7 @@ import Form from "./components/form";
 import Ajax from "./components/ajax";
 class App extends Component {
   render() {
-    const { match } = this.props;
+    const { match} = this.props;
     return (
       <div>
         <ul>
@@ -16,13 +16,13 @@ class App extends Component {
             <Link to={match.path}>Home</Link>
           </li>
           <li>
-            <Link to={`${match.path}/reverseMessage`}>ReverseMessage</Link>
+            <Link to={`${match.path}/reverseMessage`}>ReverseMessage+Mobx</Link>
           </li>
           <li>
             <Link to={`${match.path}/clock`}>Clock</Link>
           </li>
           <li>
-            <Link to={`${match.path}/counter`}>Counter</Link>
+            <Link to={`${match.path}/counter`}>Counter+Redux</Link>
           </li>
           <li>
             <Link to={`${match.path}/form`}>Form</Link>
